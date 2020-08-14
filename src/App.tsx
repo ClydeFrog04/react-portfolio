@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useContext} from 'react';
 import './App.css';
+import {PortfolioContext} from "./contexts/portfolioContext";
+import {IProject} from "./interfaces/projectInterfaces";
+import ProjectCard from "./components/ProjectCard";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const {projects} = useContext(PortfolioContext);
+
+    return (
+        <div className="App text-center">
+            {projects.map((project: IProject) => {
+                return (
+                    <ProjectCard
+                        imgSrc={project.imgSrc}
+                        description={project.description}
+                        numContributors={project.numContributors}
+                        projectName={project.name}
+                        role={project.role}
+                        timeSpent={project.timeSpent}
+                    />
+                );
+            })}
+        </div>
+    );
 }
 
 export default App;
