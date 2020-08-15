@@ -12,12 +12,12 @@ const ProjectPage = () => {
     useEffect(() => {
         window.setTimeout(() =>{
             setPreload(false);
-        }, 1000);//todo: this timeout must be greater than 0 but shorter than the animation duration
+        }, 500);//todo: this timeout must be greater than 0 but shorter than the animation duration
     },[]);
 
     const {projects} = useContext(PortfolioContext);
 
-    const preloadClass = `${preload ? "preload" : ""}`;
+    const preloadClass = `${(preload || changingPages) ? "preload" : ""}`;
     const fadeOutClass = `${changingPages ? "fadeout" : ""}`;
     return (
         <>

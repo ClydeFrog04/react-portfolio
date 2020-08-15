@@ -2,11 +2,12 @@ import React, {useContext, useState} from "react"
 import {Collapse, Nav, Navbar, NavbarBrand, NavbarText, NavbarToggler, NavItem, NavLink} from "reactstrap";
 import {Link} from "react-router-dom";
 import DelayLink from "../utils/DelayLink";
+import DelayLinkClass from "../utils/DelayLinkClass";
 import {PortfolioContext} from "../../contexts/portfolioContext";
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const {setChangingPages} = useContext(PortfolioContext);
+    const {setChangingPages, history} = useContext(PortfolioContext);
     const toggle = () => {
         console.log("Navbar toggle called");
         setIsOpen(!isOpen);
@@ -22,18 +23,28 @@ const NavBar = () => {
                 {/*    <NavbarBrand>FORC</NavbarBrand>*/}
                 {/*</DelayLink>*/}
                 {/*<NavbarBrand>*/}
-                    <DelayLink
+                    <DelayLinkClass
                         className="link navbar-brand"
-                        to="/" delay={1000}
+                        to="/"
+                        delay={1000}
                         onDelayStart={() => setChangingPages(true)}
                         onDelayEnd={() => setChangingPages(false)}
-                    >FORC</DelayLink>
+                        history={history}
+                    >FORC</DelayLinkClass>
+                <Link to={"/"}>ForcLink</Link>
                 {/*</NavbarBrand>*/}
                 <NavbarToggler onClick={toggle}/>
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <Link className="link" to="/projects">Projects</Link>
+                            <DelayLinkClass
+                                className="link"
+                                to="/projects"
+                                delay={1000}
+                                onDelayStart={() => setChangingPages(true)}
+                                onDelayEnd={() => setChangingPages(false)}
+                                history={history}
+                            >Projects</DelayLinkClass>
                         </NavItem>
                     </Nav>
                     <NavbarText>Randal Egan</NavbarText>
