@@ -12,7 +12,7 @@ const ProjectPage = () => {
     useEffect(() => {
         window.setTimeout(() =>{
             setPreload(false);
-        }, 500);//todo: this timeout must be greater than 0 but shorter than the animation duration
+        }, 500);
     },[]);
 
     const {projects} = useContext(PortfolioContext);

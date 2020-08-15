@@ -1,7 +1,6 @@
 import React, {useContext, useState} from "react"
 import {Collapse, Nav, Navbar, NavbarBrand, NavbarText, NavbarToggler, NavItem, NavLink} from "reactstrap";
 import {Link} from "react-router-dom";
-import DelayLink from "../utils/DelayLink";
 import DelayLinkClass from "../utils/DelayLinkClass";
 import {PortfolioContext} from "../../contexts/portfolioContext";
 
@@ -16,13 +15,6 @@ const NavBar = () => {
     return (
         <div>
             <Navbar color="light" light expand="md">
-                {/*<DelayLink*/}
-                {/*    to="/"*/}
-                {/*    delay={1000}*/}
-                {/*>*/}
-                {/*    <NavbarBrand>FORC</NavbarBrand>*/}
-                {/*</DelayLink>*/}
-                {/*<NavbarBrand>*/}
                     <DelayLinkClass
                         className="link navbar-brand"
                         to="/"
@@ -32,7 +24,6 @@ const NavBar = () => {
                         history={history}
                     >FORC</DelayLinkClass>
                 <Link to={"/"}>ForcLink</Link>
-                {/*</NavbarBrand>*/}
                 <NavbarToggler onClick={toggle}/>
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
