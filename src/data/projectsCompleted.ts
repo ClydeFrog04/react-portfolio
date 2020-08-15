@@ -22,3 +22,19 @@ export const projectsCompleted:IProject[] =[
         description: "A place to store all your favorite recipes that might be on loose paper and at risk of loss!",
     }
 ]
+
+
+/*
+{projects.map((project: IProject) => {
+                return (
+                    <ProjectCard
+                        images={project.images}
+                        description={project.description}
+                        numContributors={project.numContributors}
+                        projectName={project.name}
+                        role={project.role}
+                        timeSpent={project.timeSpent}
+                    />
+                );
+            })}
+ */

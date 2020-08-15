@@ -22,3 +22,18 @@ body{
     outline: 1px solid slategrey;
   }
 }
+
+.landingFade{
+    animation: 2s ease-in 0.5s 1 fadeIn;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+//@include media-breakpoint-down()
