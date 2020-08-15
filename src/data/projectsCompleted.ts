@@ -1,9 +1,12 @@
 //eventually I plan to make a backend for this, but I don't have that right now!
 import {IProject} from "../interfaces/projectInterfaces";
-import sfr from "../assets/SFR.png";
+import sfr from "../assets/sfr/SFR.png";
+import quizApp from "../assets/quizapp/QuizPage.png";
+import startPage from "../assets/quizapp/StartPage.png";
 
 export const projectsCompleted:IProject[] =[
     {
+        images: [{src: quizApp, alt: "A trivia quiz game"}, {src: startPage, alt: "A trivia quiz game"}],
         name: "quizApp",
         timeSpent: "1 month",
         numContributors: 7,
@@ -11,7 +14,7 @@ export const projectsCompleted:IProject[] =[
         description: "A trivia quiz game with many game settings so the player never gets bored playing.",
     },
     {
-        imgSrc: sfr,
+        images: [{src: sfr, alt:"A family recipe website"}],
         name: "Secret Family Recipes",
         timeSpent: "2 weeks",
         numContributors: 4,
