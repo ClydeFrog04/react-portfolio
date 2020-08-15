@@ -1,0 +1,76 @@
+@import "~bootstrap/scss/functions.scss";
+@import "~bootstrap/scss/variables.scss";
+@import "~bootstrap/scss/mixins/breakpoints.scss";
+
+/*
+@import "~bootstrap-4.0.0/scss/_functions.scss";
+@import "~bootstrap-4.0.0/scss/_variables.scss";
+ */
+
+.card-img {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.modalSize {
+  width: 4000px;
+}
+
+body{
+  &::-webkit-scrollbar{
+    width: .66rem;
+  }
+  &::-webkit-scrollbar-track{
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+  &::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+}
+
+.landingPage{
+    height: calc(100vh - 56px);
+}
+
+.link{
+    color: rgba(0,0,0,.5);
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+.myFade{
+    animation: 2s ease-in 0.5s 1 fadeIn;
+}
+
+.projectCard{
+    @include media-breakpoint-up(sm){
+        width: 75%;
+    }
+    @include media-breakpoint-up(md){
+        width: 50%;
+    }
+    @include media-breakpoint-up(lg){
+        width: 25%;
+    }
+}
+
+.projectCarousel{
+}
+
+.projectCarouselImg{
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+}

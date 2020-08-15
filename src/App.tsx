@@ -1,26 +1,22 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import './App.css';
-import {PortfolioContext} from "./contexts/portfolioContext";
-import {IProject} from "./interfaces/projectInterfaces";
-import ProjectCard from "./components/ProjectCard";
+import LandingPage from "./components/landing-page/LandingPage";
+import {Switch, Route} from "react-router-dom";
+import ProjectPage from "./components/projects/ProjectPage";
 
 function App() {
-    const {projects} = useContext(PortfolioContext);
+
 
     return (
         <div className="App text-center">
-            {projects.map((project: IProject) => {
-                return (
-                    <ProjectCard
-                        imgSrc={project.imgSrc}
-                        description={project.description}
-                        numContributors={project.numContributors}
-                        projectName={project.name}
-                        role={project.role}
-                        timeSpent={project.timeSpent}
-                    />
-                );
-            })}
+            <Switch>
+                <Route exact path="/">
+                    <LandingPage/>
+                </Route>
+                <Route path="/projects">
+                    <ProjectPage/>
+                </Route>
+            </Switch>
         </div>
     );
 }
