@@ -23,7 +23,6 @@ const NavBar = () => {
                         onDelayEnd={() => setChangingPages(false)}
                         history={history}
                     >FORC</DelayLinkClass>
-                <Link to={"/"}>ForcLink</Link>
                 <NavbarToggler onClick={toggle}/>
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
