@@ -30,6 +30,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({images, projectName, timeSpent
         console.log("Clicked");
     };
 
+    //<Modal className="modal-xl" contentClassName="modalSize" isOpen={modal} toggle={toggleMod}>
     const imgModal = (
             <Modal className="modal-xl" contentClassName="modalSize" isOpen={modal} toggle={toggleMod}>
                 <ModalBody>
@@ -42,7 +43,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({images, projectName, timeSpent
     return (
         <Col sm={12}>
             {imgModal}
-            <Card body inverse style={{backgroundColor: "#257965"}} className="mx-auto mt-3">
+            <Card body inverse style={{backgroundColor: "#257965"}} className="projectCard mx-auto mt-3">
                 <CardImg className="card-img" onClick={toggleMod} width="100%" src={images[0].src}/>
                 <CardBody>
                     <CardTitle>{projectName}</CardTitle>

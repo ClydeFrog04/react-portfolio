@@ -35,13 +35,14 @@ const ProjectCarousel: React.FC<CarouselProps> = ({images}) => {
                 onExiting={() => setAnimating(true)}
                 onExited={() => setAnimating(false)}
                 key={image.src}>
-                <img src={image.src} alt=""/>
+                <img className="projectCarouselImg" src={image.src} alt=""/>
             </CarouselItem>
         );
     })
 
     return (
         <Carousel
+            className="projectCarousel"
             activeIndex={activeIndex}
             next={next}
             previous={previous}

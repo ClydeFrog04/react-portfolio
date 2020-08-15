@@ -1,3 +1,12 @@
+@import "~bootstrap/scss/functions.scss";
+@import "~bootstrap/scss/variables.scss";
+@import "~bootstrap/scss/mixins/breakpoints.scss";
+
+/*
+@import "~bootstrap-4.0.0/scss/_functions.scss";
+@import "~bootstrap-4.0.0/scss/_variables.scss";
+ */
+
 .card-img {
   &:hover {
     cursor: pointer;
@@ -27,6 +36,25 @@ body{
     animation: 2s ease-in 0.5s 1 fadeIn;
 }
 
+.projectCard{
+    @include media-breakpoint-up(sm){
+        width: 75%;
+    }
+    @include media-breakpoint-up(md){
+        width: 50%;
+    }
+    @include media-breakpoint-up(lg){
+        width: 25%;
+    }
+}
+
+.projectCarousel{
+}
+
+.projectCarouselImg{
+    width: 100%;
+}
+
 @keyframes fadeIn {
     0%{
         opacity: 0;
@@ -35,5 +63,3 @@ body{
         opacity: 100%;
     }
 }
-
-//@include media-breakpoint-down()
