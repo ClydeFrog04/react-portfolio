@@ -11,7 +11,7 @@ import {
     Modal,
     ModalBody
 } from "reactstrap";
-import ProjectCarousel from "../ProjectCarousel";
+import ProjectCarousel from "./ProjectCarousel";
 import {IImage} from "../../interfaces/projectInterfaces";
 
 interface ProjectCardProps {

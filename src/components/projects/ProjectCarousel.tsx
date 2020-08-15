@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import {CarouselItem, Carousel, CarouselIndicators, CarouselControl} from "reactstrap";
-import {IImage} from "../interfaces/projectInterfaces";
+import {IImage} from "../../interfaces/projectInterfaces";
 
 interface CarouselProps {
     images: IImage[];

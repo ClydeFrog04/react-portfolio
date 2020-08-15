@@ -32,7 +32,18 @@ body{
   }
 }
 
-.landingFade{
+.landingPage{
+    height: calc(100vh - 56px);
+}
+
+.link{
+    color: rgba(0,0,0,.5);
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+.myFade{
     animation: 2s ease-in 0.5s 1 fadeIn;
 }
 
