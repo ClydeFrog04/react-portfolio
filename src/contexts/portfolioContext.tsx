@@ -10,6 +10,7 @@ export const PortfolioProvider: React.FC = ({ children }) => {
     const [projects, setProjects] = useState<IProject[] | undefined>(projectsCompleted);
     const [changingPages, setChangingPages] = useState(false);
     const history = useHistory();
+    const animationDuration = 0.5;
 
 
     return (
@@ -19,7 +20,8 @@ export const PortfolioProvider: React.FC = ({ children }) => {
                 setProjects,
                 changingPages,
                 setChangingPages,
-                history
+                history,
+                animationDuration
             }}
         >
             {children}

@@ -8,10 +8,9 @@ import {gsap} from "gsap";
 
 
 const ProjectPage = () => {
-    const {projects, changingPages} = useContext(PortfolioContext);
+    const {projects, changingPages, animationDuration} = useContext(PortfolioContext);
 
     const fadeClass = `${changingPages ? "fadeout" : "fadein"}`;
-    const animationDuration = 2;
 
     const tl = gsap.timeline();
     useEffect(()=>{
