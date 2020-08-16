@@ -6,7 +6,8 @@ import {PortfolioContext} from "../../contexts/portfolioContext";
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const {setChangingPages, history} = useContext(PortfolioContext);
+    const {setChangingPages, history, animationDuration} = useContext(PortfolioContext);
+    const delay = animationDuration * 1000;//setting animationDuration in seconds as opposed to ms becaues gsap uses seconds
     const toggle = () => {
         console.log("Navbar toggle called");
         setIsOpen(!isOpen);
@@ -18,7 +19,7 @@ const NavBar = () => {
                     <DelayLinkClass
                         className="link navbar-brand"
                         to="/"
-                        delay={1000}
+                        delay={delay}
                         onDelayStart={() => setChangingPages(true)}
                         onDelayEnd={() => setChangingPages(false)}
                         history={history}
@@ -30,7 +31,7 @@ const NavBar = () => {
                             <DelayLinkClass
                                 className="link"
                                 to="/projects"
-                                delay={1000}
+                                delay={delay}
                                 onDelayStart={() => setChangingPages(true)}
                                 onDelayEnd={() => setChangingPages(false)}
                                 history={history}

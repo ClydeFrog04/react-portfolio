@@ -6,19 +6,18 @@ import {gsap, Power1} from "gsap";
 
 
 const LandingPage = () => {
-    const {changingPages} = useContext(PortfolioContext);
+    const {changingPages, animationDuration} = useContext(PortfolioContext);
 
     const fadeClass = `${changingPages ? "fadeout" : "fadein"}`;
 
     const tl = gsap.timeline();
     useEffect(()=>{
-        console.log(fadeClass);
         if(fadeClass === "fadein") {
             tl.set(".fadein", {autoAlpha: 0});
-            tl.to(".fadein", {duration: 0.5, autoAlpha: 1, repeat: 0, ease:"power2.in"});
+            tl.to(".fadein", {duration: animationDuration, autoAlpha: 1, repeat: 0, ease:"power2.in"});
         }else {
             tl.set(".fadeout", {autoAlpha: 1});
-            tl.to(".fadeout", {duration: 0.5, autoAlpha: 0, repeat: 0, ease:"power2.in"});
+            tl.to(".fadeout", {duration: animationDuration, autoAlpha: 0, repeat: 0, ease:"power2.in"});
         }
     },[changingPages]);
 
