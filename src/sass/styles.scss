@@ -1,6 +1,6 @@
-@import "~bootstrap/scss/functions.scss";
-@import "~bootstrap/scss/variables.scss";
-@import "~bootstrap/scss/mixins/breakpoints.scss";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins/breakpoints";
 
 /*
 @import "~bootstrap-4.0.0/scss/_functions.scss";
@@ -53,14 +53,15 @@ body{
 }
 
 .projectCard{
+    //todo: leaving these in for now in case I want to add something back in
     @include media-breakpoint-up(sm){
-        width: 75%;
     }
     @include media-breakpoint-up(md){
-        width: 50%;
     }
     @include media-breakpoint-up(lg){
-        width: 25%;
+    }
+    .card-subtitle{
+        padding: 4px;
     }
 }
 
