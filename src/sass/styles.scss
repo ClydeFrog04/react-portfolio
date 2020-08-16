@@ -13,9 +13,6 @@
   }
 }
 
-.modalSize {
-  width: 4000px;
-}
 body{
   &::-webkit-scrollbar{
     width: .66rem;
@@ -66,8 +63,12 @@ body{
 }
 
 .projectCarousel{
+    width: 100%;
 }
-
+.projectModal{
+    width: 100%;
+}
 .projectCarouselImg{
     width: 100%;
 }
+
