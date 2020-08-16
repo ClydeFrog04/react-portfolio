@@ -4,25 +4,30 @@ import {IProject} from "../../interfaces/projectInterfaces";
 import ProjectCard from "./ProjectCard";
 import {PortfolioContext} from "../../contexts/portfolioContext";
 import NavBar from "../navigation/NavBar";
+import {gsap} from "gsap";
 
 
 const ProjectPage = () => {
-    const [preload, setPreload] = useState(true);
-    const {changingPages} = useContext(PortfolioContext);
-    useEffect(() => {
-        window.setTimeout(() =>{
-            setPreload(false);
-        }, 500);
-    },[]);
+    const {projects, changingPages} = useContext(PortfolioContext);
 
-    const {projects} = useContext(PortfolioContext);
+    const fadeClass = `${changingPages ? "fadeout" : "fadein"}`;
+    const animationDuration = 2;
 
-    const preloadClass = `${(preload || changingPages) ? "preload" : ""}`;
-    const fadeOutClass = `${changingPages ? "fadeout" : ""}`;
+    const tl = gsap.timeline();
+    useEffect(()=>{
+        console.log(fadeClass);
+        if(fadeClass === "fadein") {
+            tl.set(".fadein", {autoAlpha: 0});
+            tl.to(".fadein", {duration: animationDuration, autoAlpha: 1, repeat: 0, ease:"power2.in"});
+        }else {
+            tl.set(".fadeout", {autoAlpha: 1});
+            tl.to(".fadeout", {duration: animationDuration, autoAlpha: 0, repeat: 0, ease:"power2.out"});
+        }
+    },[changingPages]);
     return (
         <>
             <NavBar/>
-            <Container className={`${preloadClass} ${fadeOutClass} bg-dark text-white myFade`}>
+            <Container className={`projectPage bg-dark text-white ${fadeClass}`}>
 
                 {projects.map((project: IProject) => {
                     return (
