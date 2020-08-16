@@ -32,7 +32,14 @@ body{
 }
 
 .landingPage{
+    color: white;
+    background-color: black;
     height: calc(100vh - 56px);
+}
+.projectPage{
+    background-color: black;
+    color: white;
+    height: 100vh;
 }
 
 .link{

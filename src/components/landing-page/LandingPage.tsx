@@ -1,6 +1,4 @@
 import React, {useContext, useEffect, useState} from "react"
-import {Container, Fade} from "reactstrap";
-import NavBar from "../navigation/NavBar";
 import {PortfolioContext} from "../../contexts/portfolioContext";
 
 
@@ -17,13 +15,9 @@ const LandingPage = () => {
     const preloadClass = `${preload ? "preload" : ""}`;
     const fadeOutClass = `${changingPages ? "fadeout" : ""}`;
     return (
-        <>
-            <NavBar/>
-            <Container className={`${preloadClass} ${fadeOutClass} landingPage bg-dark text-white myFade`}>
-
-                Welcome to my site
-            </Container>
-        </>
+        <div className={`${preloadClass} ${fadeOutClass} landingPage bg-dark text-white myFade`}>
+            landing page
+        </div>
     );
 }
 
