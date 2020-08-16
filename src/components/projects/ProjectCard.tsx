@@ -41,7 +41,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({images, projectName, timeSpent
     );
 
     return (
-        <Col sm={12}>
+        <>
             {imgModal}
             <Card body inverse style={{backgroundColor: "#257965"}} className="projectCard mx-auto mt-3">
                 <CardImg className="card-img" onClick={toggleMod} width="100%" src={images[0].src}/>
@@ -53,7 +53,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({images, projectName, timeSpent
                     <CardFooter style={{backgroundColor: "#6a1f1f"}}>Role: {role}</CardFooter>
                 </CardBody>
             </Card>
-        </Col>
+        </>
     );
 }
 

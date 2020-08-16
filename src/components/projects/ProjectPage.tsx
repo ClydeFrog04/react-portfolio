@@ -31,7 +31,7 @@ const ProjectPage = () => {
                         return (
                             <Col
                                 key={project.images[0].src}
-                                md
+                                md={6}
                             >
                                 <ProjectCard
                                     images={project.images}
