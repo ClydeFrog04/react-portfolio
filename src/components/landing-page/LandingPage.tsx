@@ -16,7 +16,7 @@ const LandingPage = () => {
     const fadeOutClass = `${changingPages ? "fadeout" : ""}`;
     return (
         <div className={`${preloadClass} ${fadeOutClass} landingPage bg-dark text-white myFade`}>
-            landing page
+             landing page!
         </div>
     );
 }
