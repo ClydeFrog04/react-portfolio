@@ -28,7 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({project}) => {
     const {images, name, timeSpent, numContributors, role, description, stack} = project;
 
     const imgModal = (
-            <Modal className="modal-xl" contentClassName="modalSize" isOpen={modal} toggle={toggleMod}>
+            <Modal className="modal-xl projectModal" isOpen={modal} toggle={toggleMod}>
                 <ModalBody>
                     <ProjectCarousel images={images}/>
                 </ModalBody>
