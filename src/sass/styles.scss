@@ -76,7 +76,8 @@ body{
     height: calc(100vh - 56px);
     display: flex !important;
     align-items: center !important;
-    justify-content: center;
+    justify-content: center !important;
+    margin: 0;
 }
 /*
 var modalDialog = $(this).find(".modal-dialog");
