@@ -72,3 +72,15 @@ body{
     width: 100%;
 }
 
+.modal-dialog {
+    height: calc(100vh - 56px);
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0;
+}
+/*
+var modalDialog = $(this).find(".modal-dialog");
+        /* Applying the top margin on modal dialog to align it vertically center
+modalDialog.css("margin-top", Math.max(0, ($(window).height() - modalDialog.height()) / 2));
+ */
