@@ -1,4 +1,4 @@
-import React, {useContext} from "react"
+import React, {useContext, useEffect, useState} from "react"
 import {Container} from "reactstrap";
 import {IProject} from "../../interfaces/projectInterfaces";
 import ProjectCard from "./ProjectCard";
@@ -7,13 +7,22 @@ import NavBar from "../navigation/NavBar";
 
 
 const ProjectPage = () => {
+    const [preload, setPreload] = useState(true);
+    const {changingPages} = useContext(PortfolioContext);
+    useEffect(() => {
+        window.setTimeout(() =>{
+            setPreload(false);
+        }, 500);
+    },[]);
 
     const {projects} = useContext(PortfolioContext);
 
+    const preloadClass = `${(preload || changingPages) ? "preload" : ""}`;
+    const fadeOutClass = `${changingPages ? "fadeout" : ""}`;
     return (
         <>
             <NavBar/>
-            <Container className="bg-dark text-white myFade">
+            <Container className={`${preloadClass} ${fadeOutClass} bg-dark text-white myFade`}>
 
                 {projects.map((project: IProject) => {
                     return (

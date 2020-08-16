@@ -8,13 +8,18 @@ export const PortfolioContext: Context<any> = createContext({});
 
 export const PortfolioProvider: React.FC = ({ children }) => {
     const [projects, setProjects] = useState<IProject[] | undefined>(projectsCompleted);
+    const [changingPages, setChangingPages] = useState(false);
+    const history = useHistory();
 
 
     return (
         <PortfolioContext.Provider
             value={{
                 projects,
-                setProjects
+                setProjects,
+                changingPages,
+                setChangingPages,
+                history
             }}
         >
             {children}
