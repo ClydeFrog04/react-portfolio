@@ -14,7 +14,6 @@ const ProjectPage = () => {
 
     const tl = gsap.timeline();
     useEffect(()=>{
-        console.log(fadeClass);
         if(fadeClass === "fadein") {
             tl.set(".fadein", {autoAlpha: 0});
             tl.to(".fadein", {duration: animationDuration, autoAlpha: 1, repeat: 0, ease:"power2.in"});
