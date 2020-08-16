@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {
     Card,
     CardBody,
-    CardFooter,
+    CardFooter, CardHeader,
     CardImg,
     CardSubtitle,
     CardText,
@@ -12,29 +12,24 @@ import {
     ModalBody
 } from "reactstrap";
 import ProjectCarousel from "./ProjectCarousel";
-import {IImage} from "../../interfaces/projectInterfaces";
+import {IProject} from "../../interfaces/projectInterfaces";
+import cardPalette from "../../sass/libs/vars";
 
 interface ProjectCardProps {
-    images: IImage[];
-    projectName: string;
-    timeSpent: string;
-    numContributors: number;
-    role: string;
-    description: string;
+    project: IProject;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({images, projectName, timeSpent, numContributors, role, description}) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({project}) => {
     const [modal, setModal] = useState(false);
     const toggleMod = () => {
         setModal(!modal);
         console.log("Clicked");
     };
+    const {images, name, timeSpent, numContributors, role, description, stack} = project;
 
-    //<Modal className="modal-xl" contentClassName="modalSize" isOpen={modal} toggle={toggleMod}>
     const imgModal = (
             <Modal className="modal-xl" contentClassName="modalSize" isOpen={modal} toggle={toggleMod}>
                 <ModalBody>
-                    {/*<img width="100%" src={imgSrc}/>*/}
                     <ProjectCarousel images={images}/>
                 </ModalBody>
             </Modal>
@@ -43,14 +38,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({images, projectName, timeSpent
     return (
         <>
             {imgModal}
-            <Card body inverse style={{backgroundColor: "#257965"}} className="projectCard mx-auto mt-3">
+            <Card body inverse style={{backgroundColor: cardPalette.cardBackground}} className="projectCard mx-auto mt-3">
                 <CardImg className="card-img" onClick={toggleMod} width="100%" src={images[0].src}/>
-                <CardBody>
-                    <CardTitle>{projectName}</CardTitle>
-                    <CardSubtitle>Time spent: {timeSpent}</CardSubtitle>
-                    <CardSubtitle>Number of contributors: {numContributors}</CardSubtitle>
-                    <CardText>{description}</CardText>
-                    <CardFooter style={{backgroundColor: "#6a1f1f"}}>Role: {role}</CardFooter>
+                <CardBody style={{color:cardPalette.fontColor}}>
+                    <CardHeader style={{backgroundColor: cardPalette.avsBlue}}>{name}</CardHeader>
+                    <CardSubtitle style={{backgroundColor: cardPalette.avsBlue}}>Time spent: {timeSpent}</CardSubtitle>
+                    <CardSubtitle style={{backgroundColor: cardPalette.avsBlue}}>Number of contributors: {numContributors}</CardSubtitle>
+                    <CardSubtitle style={{backgroundColor: cardPalette.avsBlue}}>{description}</CardSubtitle>
+                    <CardFooter style={{backgroundColor: cardPalette.avsBlue}}>Role: {role}</CardFooter>
                 </CardBody>
             </Card>
         </>

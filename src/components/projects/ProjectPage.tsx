@@ -33,14 +33,7 @@ const ProjectPage = () => {
                                 key={project.images[0].src}
                                 md={6}
                             >
-                                <ProjectCard
-                                    images={project.images}
-                                    description={project.description}
-                                    numContributors={project.numContributors}
-                                    projectName={project.name}
-                                    role={project.role}
-                                    timeSpent={project.timeSpent}
-                                />
+                                <ProjectCard project={project}/>
                             </Col>
                         );
                     })}
