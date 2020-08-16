@@ -5,6 +5,7 @@ export interface IProject {
     numContributors: number;
     role: string;
     description: string;
+    stack: string;
 }
 
 export interface IImage {
